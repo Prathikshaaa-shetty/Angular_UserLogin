@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+  <span>LOGIN</span>
+</mat-toolbar>
+<mat-card class="my-card" class="header">
+  <mat-card-content>
+    <img mat-card-image src="https://zoeproject.eu/common/img/login.jpg" style="height: 4%; width:20%; align-items: center;">
+    <form class="my-form" [formGroup]="loginForm" class="headerr">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+
+        <input
+          matInput
+          placeholder="Email"
+          name="email"
+          formControlName="email"
+        />
+      </mat-form-field>
+      <div></div>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          name="password"
+          formControlName="password"
+        />
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="warn"
+          type="submit"
+          (click)="onLogin()"
+          [disabled]="loginFormControl.invalid"
+          style="margin-left: 10px"
+        >
+          Login
+        </button>
+        <mat-card-actions>
+          <h2 style="padding-left: 80%">New user?</h2>
+          <button
+            mat-raised-button
+            color="secondary"
+            (click)="OnRegister()"
+            color="primary"
+            [disabled]="loginFormControl.invalid"
+            style="margin-left: 80%; margin-bottom: 1%;"
+          >
+            Register
+          </button>
+        </mat-card-actions>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>
